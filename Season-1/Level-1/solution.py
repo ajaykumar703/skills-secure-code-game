@@ -16,14 +16,15 @@ def validorder(order):
     for item in order.items:
         if item.type == 'payment':
             # Sets a reasonable min & max value for the invoice amounts
-            if -MAX_ITEM_AMOUNT <= item.amount <= MAX_ITEM_AMOUNT:
+            if  -MAX_ITEM_AMOUNT <= item.amount <= MAX_ITEM_AMOUNT:
                 payments += Decimal(str(item.amount))
         elif item.type == 'product':
             if type(item.quantity) is int and MIN_QUANTITY < item.quantity <= MAX_QUANTITY and MIN_QUANTITY < item.amount <= MAX_ITEM_AMOUNT:
                 expenses += Decimal(str(item.amount)) * item.quantity
+                print(expenses)
         else:
             return "Invalid item type: %s" % item.type
-    
+        
     if abs(payments) > MAX_TOTAL or expenses > MAX_TOTAL:
         return "Total amount payable for an order exceeded"
 
