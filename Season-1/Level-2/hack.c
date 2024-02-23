@@ -8,7 +8,7 @@
 
 // As a reminder, to pass this level, both this file alongside tests.c must pass.
 
-#include "code.h"
+#include "my_solution.h"
 
 int main() {
     printf("Level 2 \n\n");
