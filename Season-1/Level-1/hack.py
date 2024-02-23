@@ -1,5 +1,5 @@
 import unittest
-import solution as c
+import my_solution as c
 
 class TestOnlineStore(unittest.TestCase):
 
